@@ -56,7 +56,7 @@ class LoginFormController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configurationTextImage()
-        // Жест нажатия
+             // Жест нажатия
                let hideKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
                // Присваиваем его UIScrollVIew
                scrollView?.addGestureRecognizer(hideKeyboardGesture)

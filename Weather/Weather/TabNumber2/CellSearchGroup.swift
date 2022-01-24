@@ -7,8 +7,13 @@
 
 import UIKit
 
-class CellGroup2: UITableViewCell {
-
+class CellSearchGroup: UITableViewCell {
+   
+    
+    @IBOutlet var labelCell: UILabel!
+    let maskLayer = CAShapeLayer()
+    var imageGroup = UIImageView(frame: CGRect(x: 20, y: 0, width: 85, height: 80))
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,4 +25,6 @@ class CellGroup2: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    
 }
+
