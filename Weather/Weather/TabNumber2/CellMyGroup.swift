@@ -7,10 +7,12 @@
 
 import UIKit
 
-class CellGroup1: UITableViewCell {
+class CellMyGroup: UITableViewCell {
     
-    @IBOutlet var imageCell: UIImageView!
     @IBOutlet var labelCell: UILabel!
+    
+    var imageGroup = UIImageView(frame: CGRect(x: 20, y: 0, width: 85, height: 80))
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

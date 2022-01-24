@@ -13,8 +13,7 @@ class CellClass: UITableViewCell {
     @IBOutlet var text1: UILabel!
     
     @IBOutlet var cellFriends: UIView!
-    
-    
+    var imageGroup = UIImageView(frame: CGRect(x: 20, y: 0, width: 85, height: 80))
    override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
