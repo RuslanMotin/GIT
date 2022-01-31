@@ -11,17 +11,21 @@ class CellMyGroup: UITableViewCell {
     
     @IBOutlet var labelCell: UILabel!
     
-    var imageGroup = UIImageView(frame: CGRect(x: 20, y: 0, width: 85, height: 80))
+private var imageGroup = UIImageView(frame: CGRect(x: 20, y: 0, width: 85, height: 80))
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        imageGroup.layer.cornerRadius = 35
+        imageGroup.layer.masksToBounds = true // если поменять на фолс то сработает тень и будет без округления
+        imageGroup.layer.shadowColor = UIColor.black.cgColor
+        imageGroup.layer.shadowOpacity = 0.5
+        imageGroup.layer.shadowRadius = 34
+        imageGroup.layer.shadowOffset = CGSize.zero
+        addSubview(imageGroup)
+     }
+    
+    func configure(model: Group) {
+        imageGroup.image = model.image
+        labelCell.text = model.text
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }

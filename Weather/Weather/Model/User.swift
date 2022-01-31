@@ -7,8 +7,7 @@
 
 import UIKit
 
-class User {
-    var name = "Сергей"
-    var age = "28"
-    var country = "Москва"
+struct CellClassModel {
+    let text: String?
+    let image: UIImage?
 }

@@ -8,7 +8,11 @@
 import UIKit
 
 class Group {
-var flowers = "Цветы"
-var clothes = "Одежда"
-var furniture = "Мебель"
+    let text: String?
+    let image: UIImage?
+    
+    init(text: String?, image: UIImage?) {
+    self.text = text
+    self.image = image
+    }
 }

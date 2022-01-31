@@ -9,20 +9,23 @@ import UIKit
 
 class CellClass: UITableViewCell {
     
-    @IBOutlet var image1: UIImageView!
-    @IBOutlet var text1: UILabel!
     
-    @IBOutlet var cellFriends: UIView!
-    var imageGroup = UIImageView(frame: CGRect(x: 20, y: 0, width: 85, height: 80))
-   override func awakeFromNib() {
+@IBOutlet var text1: UILabel!
+private var imageGroup = UIImageView(frame: CGRect(x: 20, y: 0, width: 85, height: 80))
+    
+    override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        imageGroup.layer.cornerRadius = 35
+        imageGroup.layer.masksToBounds = true // если поменять на фолс то сработает тень и будет без округления
+        imageGroup.layer.shadowColor = UIColor.black.cgColor
+        imageGroup.layer.shadowOpacity = 0.5
+        imageGroup.layer.shadowRadius = 34
+        imageGroup.layer.shadowOffset = CGSize.zero
+        addSubview(imageGroup)
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
+    
+    func configure(model: CellClassModel) {
+        text1.text = model.text
+        imageGroup.image = model.image
     }
-
 }
