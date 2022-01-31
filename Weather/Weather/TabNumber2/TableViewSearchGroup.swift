@@ -6,16 +6,23 @@
 //
 
 import UIKit
+protocol TableViewSearchGroupDelegate: AnyObject {
+    var mass: [String] { get set }
+    func reloadData()
+}
 
 class TableViewSearchGroup: UITableViewController {
     var mass: [String] = ["Цветы", "Одежда", "Мебель"]
+weak var delegate: TableViewSearchGroupDelegate?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+      
     }
-
-   
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        alert()
+    }
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -30,18 +37,37 @@ class TableViewSearchGroup: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "addCity", for: indexPath) as! CellSearchGroup
-        cell.imageGroup.layer.cornerRadius = 35
-        cell.imageGroup.layer.masksToBounds = true // если поменять на фолс то сработает тень и будет без округления
-        cell.imageGroup.layer.shadowColor = UIColor.black.cgColor
-        cell.imageGroup.layer.shadowOpacity = 0.5
-        cell.imageGroup.layer.shadowRadius = 34
-        cell.imageGroup.layer.shadowOffset = CGSize.zero
-        cell.imageGroup.image = UIImage(named: mass[indexPath.row])
-        cell.addSubview(cell.imageGroup)
-        cell.labelCell.text = mass[indexPath.row]
+        let friendName = mass[indexPath.row]
+        let model = Group(text: friendName, image: UIImage(named: friendName))
+        cell.configure(model: model)
+        cell.delegate = self
         return cell
+    }
+    
+    func alert() {
+        guard let delegate = delegate else { return }
+        // Как получить доступ к свойству масс в контроллере Мои группы????
+        if  delegate.mass.isEmpty  {
+            let alert = UIAlertController(title: "Для добавления нажмите на ячейку", message: nil, preferredStyle: .actionSheet)
+            let button = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            alert.addAction(button)
+            present(alert, animated: true, completion: nil)
+        }
     }
 }
 
+extension TableViewSearchGroup: CellSearchGroupDelegete {
+    func cellButtonDidTab(groupName: String?) {
+        guard let delegate = delegate, let groupName = groupName else { return }
+        if !delegate.mass.contains(groupName) {
+            delegate.mass.append(groupName)
+            delegate.reloadData()
+            mass = mass.filter({ name in
+            return name != groupName
+            })
+            tableView.reloadData()
+        }
+    }
+}
 
 

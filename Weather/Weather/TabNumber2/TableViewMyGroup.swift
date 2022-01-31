@@ -3,18 +3,38 @@
 //  Weather
 //
 //  Created by Руслан Мотин on 20.01.2022.
-//
+
+
 
 import UIKit
 
-class TableViewMyGroup: UITableViewController {
+class TableViewMyGroup: UITableViewController, TableViewSearchGroupDelegate {
+    func reloadData() {
+        tableView.reloadData()
+    }
+   
     var mass: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Мои группы"
+        
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "toSearchGroup" else {
+            return
+        }
+        guard let destinationVc = segue.destination as? TableViewSearchGroup else {
+            return
+        }
+        destinationVc.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        alert()
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -26,19 +46,10 @@ class TableViewMyGroup: UITableViewController {
         return mass.count
     }
 
-   
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "0001", for: indexPath) as! CellMyGroup
-        cell.imageGroup.layer.cornerRadius = 35
-        cell.imageGroup.layer.masksToBounds = true // если поменять на фолс то сработает тень и будет без округления
-        cell.imageGroup.layer.shadowColor = UIColor.black.cgColor
-        cell.imageGroup.layer.shadowOpacity = 0.5
-        cell.imageGroup.layer.shadowRadius = 34
-        cell.imageGroup.layer.shadowOffset = CGSize.zero
-        cell.imageGroup.image = UIImage(named: mass[indexPath.row])
-        cell.addSubview(cell.imageGroup)
-        cell.labelCell.text = mass[indexPath.row]
+        let model = Group(text: mass[indexPath.row], image: UIImage(named: mass[indexPath.row]))
+        cell.configure(model: model)
         return cell
     }
     
@@ -48,25 +59,16 @@ class TableViewMyGroup: UITableViewController {
         let actionDelete = UISwipeActionsConfiguration(actions: [delete])
         return actionDelete
     }
-   
-    @IBAction func addGroup (segue: UIStoryboardSegue) {
-        // Проверяем идентификатор перехода, чтобы убедиться, что это нужный
-                if segue.identifier == "addCity" {
-                // Получаем ссылку на контроллер, с которого осуществлен переход
-                    guard let allCitiesController = segue.source as? TableViewSearchGroup else { return }
-                // Получаем индекс выделенной ячейки
-                    if let indexPath = allCitiesController.tableView.indexPathForSelectedRow {
-                // Получаем город по индексу
-                        let city = allCitiesController.mass[indexPath.row]
-                // Проверяем, что такого города нет в списке
-                        if !mass.contains(city) {
-                // Добавляем город в список выбранных
-                            mass.append(city)
-                // Обновляем таблицу
-                            tableView.reloadData()
-                        }
-           }
-         }
+    
+    func alert() {
+        if mass.count == 0 {
+        let alert = UIAlertController(title: "Список групп пустой :)", message: "Чтобы воспользоваться поиском группы, нажмите на кнопку Search", preferredStyle: .actionSheet)
+        let button = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alert.addAction(button)
+        present(alert, animated: true, completion: nil)
+        } else {
+        return
        }
-     }
+    }
+ }
 
