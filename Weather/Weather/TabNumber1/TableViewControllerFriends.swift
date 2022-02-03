@@ -10,9 +10,9 @@ import UIKit
 
 class TableViewControllerFriends: UITableViewController {
     
+    var friends: [CellClassModel] = [.init(text: ["Андрей"], image: UIImage(named: "Андрей")), .init(text: ["Василий"], image: UIImage(named: "Василий")), .init(text: ["Николай"], image: UIImage(named: "Николай"))]
     
-    var friends = ["Андрей", "Василий", "Николай"] 
-    static  var name = ""
+    static  var name: [String] = []
     
     @IBOutlet var tableViewFriends: UITableView!
 
@@ -20,29 +20,38 @@ class TableViewControllerFriends: UITableViewController {
         super.viewDidLoad()
     }
     
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        friends.count
+    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return friends.count
+        return friends[section].text.count
     }
   
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "0000") as! CellClass
-        let friendName = friends[indexPath.row]
-        let model = CellClassModel(
-            text: friendName,
-            image: UIImage(named: friendName)
-        )
-        cell.configure(model: model)
+        let friendName = friends[indexPath.section]
+        cell.configure(model: friendName)
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        TableViewControllerFriends.name = friends[indexPath.row]
+        TableViewControllerFriends.name = friends[indexPath.section].text
     }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        15
+    }
+    
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        var text = String()
-        text = friends[section]
-        let result = String(text.first!)
+        let result = String(friends[section].text[0].first!)
+        if section == 0 {
+            return result
+        } else if section == 1 {
+            return result
+        }
         return result
     }
 }
+
+

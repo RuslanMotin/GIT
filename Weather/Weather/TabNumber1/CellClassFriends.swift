@@ -25,7 +25,7 @@ private var imageGroup = UIImageView(frame: CGRect(x: 20, y: 0, width: 85, heigh
     }
     
     func configure(model: CellClassModel) {
-        text1.text = model.text
+        text1.text = model.text[0]
         imageGroup.image = model.image
     }
 }

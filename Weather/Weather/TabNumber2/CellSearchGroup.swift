@@ -33,8 +33,8 @@ private var imageGroup = UIImageView(frame: CGRect(x: 20, y: 0, width: 85, heigh
     }
     
     func configure(model: Group) {
-        imageGroup.image = model.image!
-        labelCell.text = model.text!
+        imageGroup.image = model.image
+        labelCell.text = model.text
     }
 }
 

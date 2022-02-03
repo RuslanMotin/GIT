@@ -38,7 +38,7 @@ weak var delegate: TableViewSearchGroupDelegate?
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "addCity", for: indexPath) as! CellSearchGroup
         let friendName = mass[indexPath.row]
-        let model = Group(text: friendName, image: UIImage(named: friendName))
+        let model = Group(text: friendName, image: UIImage(named: friendName)!)
         cell.configure(model: model)
         cell.delegate = self
         return cell
@@ -48,7 +48,7 @@ weak var delegate: TableViewSearchGroupDelegate?
         guard let delegate = delegate else { return }
         // Как получить доступ к свойству масс в контроллере Мои группы????
         if  delegate.mass.isEmpty  {
-            let alert = UIAlertController(title: "Для добавления нажмите на ячейку", message: nil, preferredStyle: .actionSheet)
+            let alert = UIAlertController(title: "Для добавления нажмите на кнопку + ", message: nil, preferredStyle: .actionSheet)
             let button = UIAlertAction(title: "Ok", style: .default, handler: nil)
             alert.addAction(button)
             present(alert, animated: true, completion: nil)
