@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11114BAB27A9699900A0E244 /* FooterCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11114BAA27A9699900A0E244 /* FooterCollectionReusableView.swift */; };
 		113C8CBF2796DCCF006FAF7F /* TableViewControllerFriends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113C8CBE2796DCCF006FAF7F /* TableViewControllerFriends.swift */; };
 		113C8CC12796DCE7006FAF7F /* CellClassFriends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113C8CC02796DCE7006FAF7F /* CellClassFriends.swift */; };
 		1145509B279EC11E000531FB /* Like.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1145509A279EC11E000531FB /* Like.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11114BAA27A9699900A0E244 /* FooterCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterCollectionReusableView.swift; sourceTree = "<group>"; };
 		113C8CBE2796DCCF006FAF7F /* TableViewControllerFriends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewControllerFriends.swift; sourceTree = "<group>"; };
 		113C8CC02796DCE7006FAF7F /* CellClassFriends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellClassFriends.swift; sourceTree = "<group>"; };
 		1145509A279EC11E000531FB /* Like.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Like.swift; sourceTree = "<group>"; };
@@ -75,6 +77,14 @@
 			path = CustomCell;
 			sourceTree = "<group>";
 		};
+		11BE11DA27A968D400F57369 /* Footer */ = {
+			isa = PBXGroup;
+			children = (
+				11114BAA27A9699900A0E244 /* FooterCollectionReusableView.swift */,
+			);
+			path = Footer;
+			sourceTree = "<group>";
+		};
 		11E103B2279C0E2900EC6C9F /* TabNumber1 */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +118,7 @@
 		11E9B456279465A20033B1B3 = {
 			isa = PBXGroup;
 			children = (
+				11BE11DA27A968D400F57369 /* Footer */,
 				11E9B461279465A20033B1B3 /* Weather */,
 				11E9B460279465A20033B1B3 /* Products */,
 			);
@@ -208,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				113C8CC12796DCE7006FAF7F /* CellClassFriends.swift in Sources */,
+				11114BAB27A9699900A0E244 /* FooterCollectionReusableView.swift in Sources */,
 				118CC0F527994CF6004F6A78 /* User.swift in Sources */,
 				118CC0FB27994F81004F6A78 /* CellSearchGroup.swift in Sources */,
 				118CC0F727994DA4004F6A78 /* Group.swift in Sources */,

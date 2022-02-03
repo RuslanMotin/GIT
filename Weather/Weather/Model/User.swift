@@ -8,6 +8,6 @@
 import UIKit
 
 struct CellClassModel {
-    let text: String?
+    let text: [String]
     let image: UIImage?
 }

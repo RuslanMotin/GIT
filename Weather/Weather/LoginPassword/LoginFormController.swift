@@ -9,11 +9,55 @@ import UIKit
 
 class LoginFormController: UIViewController {
     
+private var viewBackground = UIView(frame: CGRect(x: 0, y: 0, width: 420, height: 908))
+    
+private var circle1 = UIView(frame: CGRect(x: 110, y: 450, width: 50, height: 50))
+    
+private var circle2 = UIView(frame: CGRect(x: 185, y: 450, width: 50, height: 50))
+    
+private var circle3 = UIView(frame: CGRect(x: 260, y: 450, width: 50, height: 50))
+    
     @IBOutlet var imageVK: UIImageView!
     
     @IBOutlet var loginInput: UITextField!
     
     @IBOutlet var passwordInput: UITextField!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configure()
+        animate()
+        configurationTextImage()
+        // Жест нажатия
+        let hideKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        // Присваиваем его UIScrollVIew
+        scrollView?.addGestureRecognizer(hideKeyboardGesture)
+    }
+    
+    func animate() {
+        let time = TimeInterval() + 0.5
+        UIView.animate(withDuration: 1.5, delay: time, options: [.autoreverse], animations: {
+            self.circle1.alpha = 0
+        }, completion: { _ in self.circle1.removeFromSuperview()})
+        UIView.animate(withDuration: 1.5, delay: time,options: [.autoreverse], animations: { self.circle2.alpha = 0 }, completion: { _ in self.circle2.removeFromSuperview() })
+        UIView.animate(withDuration: 1.5, delay: time, options: [.autoreverse], animations: { self.circle3.alpha = 0 }, completion: { _ in self .circle3.removeFromSuperview() })
+        UIView.animate(withDuration: 4.7, delay: time, animations: {
+            self.viewBackground.backgroundColor = .lightGray }, completion: { _ in self.viewBackground.removeFromSuperview()} )
+    }
+    
+    func configure() {
+        viewBackground.backgroundColor = .cyan
+        circle1.backgroundColor = .red
+        circle1.layer.cornerRadius = 25
+        circle2.backgroundColor = .blue
+        circle2.layer.cornerRadius = 25
+        circle3.backgroundColor = .yellow
+        circle3.layer.cornerRadius = 25
+        view.addSubview(viewBackground)
+        view.addSubview(circle1)
+        view.addSubview(circle2)
+        view.addSubview(circle3)
+    }
     
     func configurationTextImage() {
         loginInput.placeholder = "Email или телефон"
@@ -51,15 +95,6 @@ class LoginFormController: UIViewController {
         let button = UIAlertAction(title: "ОК", style: .cancel, handler: nil)
         alert.addAction(button)
         present(alert, animated: true, completion: nil)
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        configurationTextImage()
-        // Жест нажатия
-        let hideKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
-        // Присваиваем его UIScrollVIew
-        scrollView?.addGestureRecognizer(hideKeyboardGesture)
     }
     
     override func viewWillAppear(_ animated: Bool) {

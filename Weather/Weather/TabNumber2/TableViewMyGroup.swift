@@ -48,7 +48,7 @@ class TableViewMyGroup: UITableViewController, TableViewSearchGroupDelegate {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "0001", for: indexPath) as! CellMyGroup
-        let model = Group(text: mass[indexPath.row], image: UIImage(named: mass[indexPath.row]))
+        let model = Group(text: mass[indexPath.row], image: UIImage(named: mass[indexPath.row])!)
         cell.configure(model: model)
         return cell
     }
