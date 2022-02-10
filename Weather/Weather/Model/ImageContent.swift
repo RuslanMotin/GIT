@@ -8,6 +8,5 @@
 import UIKit
 
 struct ImageContent {
-   
     var image: UIImage!
 }
