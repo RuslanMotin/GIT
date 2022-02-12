@@ -4,7 +4,11 @@
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="number" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="NewsCoreData" representedClassName="NewsCoreData" syncable="YES" codeGenerationType="class">
+        <attribute name="newsText" optional="YES" attributeType="String"/>
+    </entity>
     <elements>
         <element name="ContactCoreData" positionX="-63" positionY="-18" width="128" height="59"/>
+        <element name="NewsCoreData" positionX="-63" positionY="0" width="128" height="44"/>
     </elements>
 </model>
