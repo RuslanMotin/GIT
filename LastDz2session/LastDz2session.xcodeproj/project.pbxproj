@@ -7,29 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1116E85127B7F61B00CBD0AF /* FuncCoreDataContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1116E85027B7F61B00CBD0AF /* FuncCoreDataContacts.swift */; };
 		112CD27F27B417AD00FD232E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112CD27E27B417AD00FD232E /* AppDelegate.swift */; };
 		112CD28127B417AD00FD232E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112CD28027B417AD00FD232E /* SceneDelegate.swift */; };
 		112CD28327B417AD00FD232E /* ContactsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112CD28227B417AD00FD232E /* ContactsController.swift */; };
 		112CD28627B417AD00FD232E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 112CD28427B417AD00FD232E /* Main.storyboard */; };
 		112CD28927B417AD00FD232E /* LastDz2session.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 112CD28727B417AD00FD232E /* LastDz2session.xcdatamodeld */; };
-		112CD28B27B417AE00FD232E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 112CD28A27B417AE00FD232E /* Assets.xcassets */; };
 		112CD28E27B417AE00FD232E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 112CD28C27B417AE00FD232E /* LaunchScreen.storyboard */; };
 		112CD29627B419DD00FD232E /* NewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112CD29527B419DD00FD232E /* NewsController.swift */; };
 		112CD29827B41EDB00FD232E /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112CD29727B41EDB00FD232E /* ContactCell.swift */; };
+		113D7F3727B5FFC700FB3D37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 113D7F3627B5FFC600FB3D37 /* Assets.xcassets */; };
+		1142A77127B5609100D6E1FB /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1142A77027B5609100D6E1FB /* NewsCell.swift */; };
+		11700E7C27B5814A00A82C36 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11700E7B27B5814A00A82C36 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1116E85027B7F61B00CBD0AF /* FuncCoreDataContacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuncCoreDataContacts.swift; sourceTree = "<group>"; };
 		112CD27B27B417AD00FD232E /* LastDz2session.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LastDz2session.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		112CD27E27B417AD00FD232E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		112CD28027B417AD00FD232E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		112CD28227B417AD00FD232E /* ContactsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsController.swift; sourceTree = "<group>"; };
 		112CD28527B417AD00FD232E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		112CD28827B417AD00FD232E /* LastDz2session.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LastDz2session.xcdatamodel; sourceTree = "<group>"; };
-		112CD28A27B417AE00FD232E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		112CD28D27B417AE00FD232E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		112CD28F27B417AE00FD232E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		112CD29527B419DD00FD232E /* NewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsController.swift; sourceTree = "<group>"; };
 		112CD29727B41EDB00FD232E /* ContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
+		113D7F3627B5FFC600FB3D37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = LastDz2session/Assets.xcassets; sourceTree = SOURCE_ROOT; };
+		1142A77027B5609100D6E1FB /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
+		11700E7B27B5814A00A82C36 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				112CD29527B419DD00FD232E /* NewsController.swift */,
+				1142A77027B5609100D6E1FB /* NewsCell.swift */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -63,6 +70,8 @@
 		112CD27227B417AD00FD232E = {
 			isa = PBXGroup;
 			children = (
+				11700E7B27B5814A00A82C36 /* Model.swift */,
+				1116E85027B7F61B00CBD0AF /* FuncCoreDataContacts.swift */,
 				112CD27D27B417AD00FD232E /* LastDz2session */,
 				112CD27C27B417AD00FD232E /* Products */,
 			);
@@ -84,7 +93,7 @@
 				111B965627B5341200736FE9 /* Contacts */,
 				111B965727B5343600736FE9 /* News */,
 				112CD28427B417AD00FD232E /* Main.storyboard */,
-				112CD28A27B417AE00FD232E /* Assets.xcassets */,
+				113D7F3627B5FFC600FB3D37 /* Assets.xcassets */,
 				112CD28C27B417AE00FD232E /* LaunchScreen.storyboard */,
 				112CD28F27B417AE00FD232E /* Info.plist */,
 				112CD28727B417AD00FD232E /* LastDz2session.xcdatamodeld */,
@@ -151,7 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				112CD28E27B417AE00FD232E /* LaunchScreen.storyboard in Resources */,
-				112CD28B27B417AE00FD232E /* Assets.xcassets in Resources */,
+				113D7F3727B5FFC700FB3D37 /* Assets.xcassets in Resources */,
 				112CD28627B417AD00FD232E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -163,9 +172,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1116E85127B7F61B00CBD0AF /* FuncCoreDataContacts.swift in Sources */,
+				11700E7C27B5814A00A82C36 /* Model.swift in Sources */,
 				112CD29827B41EDB00FD232E /* ContactCell.swift in Sources */,
 				112CD28327B417AD00FD232E /* ContactsController.swift in Sources */,
 				112CD27F27B417AD00FD232E /* AppDelegate.swift in Sources */,
+				1142A77127B5609100D6E1FB /* NewsCell.swift in Sources */,
 				112CD28127B417AD00FD232E /* SceneDelegate.swift in Sources */,
 				112CD29627B419DD00FD232E /* NewsController.swift in Sources */,
 				112CD28927B417AD00FD232E /* LastDz2session.xcdatamodeld in Sources */,
